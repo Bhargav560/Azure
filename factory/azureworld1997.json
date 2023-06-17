@@ -1,0 +1,9 @@
+{
+	"name": "azureworld1997",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "e1282110-74a9-4c0b-a843-95e5a95a90c0",
+		"tenantId": "3645bea3-1c1c-4265-a32a-bb9b7de03a85"
+	}
+}
