@@ -5,12 +5,27 @@
 			"referenceName": "AzureDataLakeStorage0",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"Input_DS": {
+				"type": "string"
+			},
+			"Input _DS_File": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileSystem": "datafiles"
+				"fileName": {
+					"value": "@dataset().Input _DS_File",
+					"type": "Expression"
+				},
+				"fileSystem": {
+					"value": "@dataset().Input_DS",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

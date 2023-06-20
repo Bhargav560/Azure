@@ -20,7 +20,6 @@
 						"storeSettings": {
 							"type": "AzureBlobFSReadSettings",
 							"recursive": true,
-							"wildcardFileName": "*",
 							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
@@ -41,17 +40,44 @@
 				"inputs": [
 					{
 						"referenceName": "Random",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Input_DS": {
+								"value": "@pipeline().parameters.Input_PL",
+								"type": "Expression"
+							},
+							"Input _DS_File": {
+								"value": "@pipeline().parameters.Input_PL_File",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "Json1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"Output_DS": {
+								"value": "@pipeline().parameters.Output_PL",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"Input_PL": {
+				"type": "string"
+			},
+			"Output_PL": {
+				"type": "string"
+			},
+			"Input_PL_File": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
